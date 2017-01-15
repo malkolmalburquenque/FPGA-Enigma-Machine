@@ -1,0 +1,504 @@
+Analysis & Elaboration report for g04_Complete_Enigma_FPGA
+Wed Jan 04 14:06:36 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorL"
+  6. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorM"
+  7. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_permutation:inv_permutator"
+  8. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_permutation:permutator"
+  9. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:inv_encoder1"
+ 10. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:inv_encoder0"
+ 11. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:encoder1"
+ 12. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:encoder0"
+ 13. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:inv_decoder1"
+ 14. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:inv_decoder0"
+ 15. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:decoder1"
+ 16. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:decoder0"
+ 17. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR"
+ 18. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_5bit_comparator:comparatorM"
+ 19. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_5bit_comparator:comparatorR"
+ 20. Port Connectivity Checks: "g04_Enigma_machine:enigmamachine"
+ 21. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                       ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Wed Jan 04 14:06:35 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; g04_Complete_Enigma_FPGA                        ;
+; Top-level Entity Name              ; g04_Complete_Enigma_FPGA                        ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                       ;
+; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                       ;
+; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                       ;
+; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                                  ;
++----------------------------------------------------------------------------+--------------------------+--------------------------+
+; Option                                                                     ; Setting                  ; Default Value            ;
++----------------------------------------------------------------------------+--------------------------+--------------------------+
+; Top-level entity name                                                      ; g04_Complete_Enigma_FPGA ; g04_Complete_Enigma_FPGA ;
+; Family name                                                                ; Cyclone IV GX            ; Cyclone IV GX            ;
+; Use smart compilation                                                      ; Off                      ; Off                      ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                       ; On                       ;
+; Enable compact report table                                                ; Off                      ; Off                      ;
+; Restructure Multiplexers                                                   ; Auto                     ; Auto                     ;
+; Create Debugging Nodes for IP Cores                                        ; Off                      ; Off                      ;
+; Preserve fewer node names                                                  ; On                       ; On                       ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                      ; Off                      ;
+; Verilog Version                                                            ; Verilog_2001             ; Verilog_2001             ;
+; VHDL Version                                                               ; VHDL_1993                ; VHDL_1993                ;
+; State Machine Processing                                                   ; Auto                     ; Auto                     ;
+; Safe State Machine                                                         ; Off                      ; Off                      ;
+; Extract Verilog State Machines                                             ; On                       ; On                       ;
+; Extract VHDL State Machines                                                ; On                       ; On                       ;
+; Ignore Verilog initial constructs                                          ; Off                      ; Off                      ;
+; Iteration limit for constant Verilog loops                                 ; 5000                     ; 5000                     ;
+; Iteration limit for non-constant Verilog loops                             ; 250                      ; 250                      ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                       ; On                       ;
+; Infer RAMs from Raw Logic                                                  ; On                       ; On                       ;
+; Parallel Synthesis                                                         ; On                       ; On                       ;
+; DSP Block Balancing                                                        ; Auto                     ; Auto                     ;
+; NOT Gate Push-Back                                                         ; On                       ; On                       ;
+; Power-Up Don't Care                                                        ; On                       ; On                       ;
+; Remove Redundant Logic Cells                                               ; Off                      ; Off                      ;
+; Remove Duplicate Registers                                                 ; On                       ; On                       ;
+; Ignore CARRY Buffers                                                       ; Off                      ; Off                      ;
+; Ignore CASCADE Buffers                                                     ; Off                      ; Off                      ;
+; Ignore GLOBAL Buffers                                                      ; Off                      ; Off                      ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                      ; Off                      ;
+; Ignore LCELL Buffers                                                       ; Off                      ; Off                      ;
+; Ignore SOFT Buffers                                                        ; On                       ; On                       ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                      ; Off                      ;
+; Optimization Technique                                                     ; Balanced                 ; Balanced                 ;
+; Carry Chain Length                                                         ; 70                       ; 70                       ;
+; Auto Carry Chains                                                          ; On                       ; On                       ;
+; Auto Open-Drain Pins                                                       ; On                       ; On                       ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                      ; Off                      ;
+; Auto ROM Replacement                                                       ; On                       ; On                       ;
+; Auto RAM Replacement                                                       ; On                       ; On                       ;
+; Auto DSP Block Replacement                                                 ; On                       ; On                       ;
+; Auto Shift Register Replacement                                            ; Auto                     ; Auto                     ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                     ; Auto                     ;
+; Auto Clock Enable Replacement                                              ; On                       ; On                       ;
+; Strict RAM Replacement                                                     ; Off                      ; Off                      ;
+; Allow Synchronous Control Signals                                          ; On                       ; On                       ;
+; Force Use of Synchronous Clear Signals                                     ; Off                      ; Off                      ;
+; Auto RAM Block Balancing                                                   ; On                       ; On                       ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                      ; Off                      ;
+; Auto Resource Sharing                                                      ; Off                      ; Off                      ;
+; Allow Any RAM Size For Recognition                                         ; Off                      ; Off                      ;
+; Allow Any ROM Size For Recognition                                         ; Off                      ; Off                      ;
+; Allow Any Shift Register Size For Recognition                              ; Off                      ; Off                      ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                       ; On                       ;
+; Ignore translate_off and synthesis_off directives                          ; Off                      ; Off                      ;
+; Timing-Driven Synthesis                                                    ; On                       ; On                       ;
+; Report Parameter Settings                                                  ; On                       ; On                       ;
+; Report Source Assignments                                                  ; On                       ; On                       ;
+; Report Connectivity Checks                                                 ; On                       ; On                       ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                      ; Off                      ;
+; Synchronization Register Chain Length                                      ; 2                        ; 2                        ;
+; PowerPlay Power Optimization                                               ; Normal compilation       ; Normal compilation       ;
+; HDL message level                                                          ; Level2                   ; Level2                   ;
+; Suppress Register Optimization Related Messages                            ; Off                      ; Off                      ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                     ; 5000                     ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                     ; 5000                     ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                      ; 100                      ;
+; Clock MUX Protection                                                       ; On                       ; On                       ;
+; Auto Gated Clock Conversion                                                ; Off                      ; Off                      ;
+; Block Design Naming                                                        ; Auto                     ; Auto                     ;
+; SDC constraint protection                                                  ; Off                      ; Off                      ;
+; Synthesis Effort                                                           ; Auto                     ; Auto                     ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                       ; On                       ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                      ; Off                      ;
+; Analysis & Synthesis Message Level                                         ; Medium                   ; Medium                   ;
+; Disable Register Merging Across Hierarchies                                ; Auto                     ; Auto                     ;
+; Resource Aware Inference For Block RAM                                     ; On                       ; On                       ;
+; Synthesis Seed                                                             ; 1                        ; 1                        ;
++----------------------------------------------------------------------------+--------------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorL"                                          ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; direction_0  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; direction_1  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; direction_2  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; direction_3  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; count_output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorM" ;
++-------------+-------+----------+----------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                      ;
++-------------+-------+----------+----------------------------------------------+
+; direction_0 ; Input ; Info     ; Stuck at VCC                                 ;
+; direction_1 ; Input ; Info     ; Stuck at VCC                                 ;
+; direction_2 ; Input ; Info     ; Stuck at VCC                                 ;
+; direction_3 ; Input ; Info     ; Stuck at VCC                                 ;
++-------------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_permutation:inv_permutator"          ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; output_code ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_permutation:permutator"                  ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; inv_output_code ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:inv_encoder1"     ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:inv_encoder0"     ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:encoder1"         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:encoder0"         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:inv_decoder1"          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; e    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:inv_decoder0"          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; e    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:decoder1"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; e    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:decoder0"              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; e    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR" ;
++-------------+-------+----------+----------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                      ;
++-------------+-------+----------+----------------------------------------------+
+; direction_0 ; Input ; Info     ; Stuck at VCC                                 ;
+; direction_1 ; Input ; Info     ; Stuck at VCC                                 ;
+; direction_2 ; Input ; Info     ; Stuck at VCC                                 ;
+; direction_3 ; Input ; Info     ; Stuck at VCC                                 ;
++-------------+-------+----------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_5bit_comparator:comparatorM" ;
++---------+-------+----------+-----------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                         ;
++---------+-------+----------+-----------------------------------------------------------------+
+; b[4..3] ; Input ; Info     ; Stuck at GND                                                    ;
+; b[1..0] ; Input ; Info     ; Stuck at GND                                                    ;
+; b[2]    ; Input ; Info     ; Stuck at VCC                                                    ;
++---------+-------+----------+-----------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine|g04_5bit_comparator:comparatorR" ;
++---------+-------+----------+-----------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                         ;
++---------+-------+----------+-----------------------------------------------------------------+
+; b[3..0] ; Input ; Info     ; Stuck at GND                                                    ;
+; b[4]    ; Input ; Info     ; Stuck at VCC                                                    ;
++---------+-------+----------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g04_Enigma_machine:enigmamachine"                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; scrambled_code ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Elaboration
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jan 04 14:06:30 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g04_Complete_Enigma_FPGA -c g04_Complete_Enigma_FPGA --analysis_and_elaboration
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file g04_stecker.vhd
+    Info (12022): Found design unit 1: g04_stecker-behav
+    Info (12023): Found entity 1: g04_stecker
+Info (12021): Found 2 design units, including 1 entities, in source file g04_rotor_stepper_fsm.vhd
+    Info (12022): Found design unit 1: g04_rotor_stepper_fsm-behav
+    Info (12023): Found entity 1: g04_rotor_stepper_fsm
+Info (12021): Found 2 design units, including 1 entities, in source file g04_rotor.vhd
+    Info (12022): Found design unit 1: g04_Rotor-behav
+    Info (12023): Found entity 1: g04_Rotor
+Info (12021): Found 2 design units, including 1 entities, in source file g04_reflector.vhd
+    Info (12022): Found design unit 1: g04_reflector-behav
+    Info (12023): Found entity 1: g04_reflector
+Info (12021): Found 2 design units, including 1 entities, in source file g04_permutation.vhd
+    Info (12022): Found design unit 1: g04_permutation-behav
+    Info (12023): Found entity 1: g04_permutation
+Info (12021): Found 2 design units, including 1 entities, in source file g04_lr_barrel_shifter.vhd
+    Info (12022): Found design unit 1: g04_lr_barrel_shifter-behaviour
+    Info (12023): Found entity 1: g04_lr_barrel_shifter
+Info (12021): Found 2 design units, including 1 entities, in source file g04_enigma_machine.vhd
+    Info (12022): Found design unit 1: g04_Enigma_machine-behav
+    Info (12023): Found entity 1: g04_Enigma_machine
+Info (12021): Found 2 design units, including 1 entities, in source file g04_enigma.vhd
+    Info (12022): Found design unit 1: g04_Enigma-behaviour
+    Info (12023): Found entity 1: g04_Enigma
+Info (12021): Found 2 design units, including 1 entities, in source file g04_complete_enigma_fpga.vhd
+    Info (12022): Found design unit 1: g04_Complete_Enigma_FPGA-behav
+    Info (12023): Found entity 1: g04_Complete_Enigma_FPGA
+Info (12021): Found 2 design units, including 1 entities, in source file g04_26_5_encoder.vhd
+    Info (12022): Found design unit 1: g04_26_5_encoder-behaviour
+    Info (12023): Found entity 1: g04_26_5_encoder
+Info (12021): Found 2 design units, including 1 entities, in source file g04_7_segment_decoder.vhd
+    Info (12022): Found design unit 1: g04_7_segment_decoder-behaviour
+    Info (12023): Found entity 1: g04_7_segment_decoder
+Info (12021): Found 2 design units, including 1 entities, in source file g04_5bit_register.vhd
+    Info (12022): Found design unit 1: g04_5bit_register-behav
+    Info (12023): Found entity 1: g04_5bit_register
+Info (12021): Found 2 design units, including 1 entities, in source file g04_5bit_comparator.vhd
+    Info (12022): Found design unit 1: g04_5bit_comparator-behav
+    Info (12023): Found entity 1: g04_5bit_comparator
+Info (12021): Found 2 design units, including 1 entities, in source file g04_2bit_register.vhd
+    Info (12022): Found design unit 1: g04_2bit_register-behav
+    Info (12023): Found entity 1: g04_2bit_register
+Info (12021): Found 2 design units, including 1 entities, in source file g04_1bit_register.vhd
+    Info (12022): Found design unit 1: g04_1bit_register-behav
+    Info (12023): Found entity 1: g04_1bit_register
+Info (12021): Found 2 design units, including 1 entities, in source file g04_0_25_counter_load.vhd
+    Info (12022): Found design unit 1: g04_0_25_counter_load-behaviour
+    Info (12023): Found entity 1: g04_0_25_counter_load
+Info (12127): Elaborating entity "g04_Complete_Enigma_FPGA" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(93): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(100): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(107): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(114): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(121): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(128): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(135): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(142): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(149): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(156): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(177): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(185): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(192): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(199): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(206): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(213): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(220): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(227): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(234): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(241): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(247): signal "switches" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "lrt_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "lrs_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "lip_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "mrt_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "mrs_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "mip_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "rrt_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "rrs_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "rip_in", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "rt", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at g04_Complete_Enigma_FPGA.vhd(168): inferring latch(es) for signal or variable "temp_input", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "temp_input[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "temp_input[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "temp_input[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "temp_input[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "temp_input[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rt" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rip_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rip_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rip_in[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rip_in[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rip_in[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrs_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrs_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrs_in[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrs_in[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrs_in[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrt_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "rrt_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mip_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mip_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mip_in[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mip_in[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mip_in[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrs_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrs_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrs_in[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrs_in[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrs_in[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrt_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "mrt_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lip_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lip_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lip_in[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lip_in[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lip_in[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrs_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrs_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrs_in[2]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrs_in[3]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrs_in[4]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrt_in[0]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (10041): Inferred latch for "lrt_in[1]" at g04_Complete_Enigma_FPGA.vhd(168)
+Info (12128): Elaborating entity "g04_2bit_register" for hierarchy "g04_2bit_register:dLRT"
+Info (12128): Elaborating entity "g04_5bit_register" for hierarchy "g04_5bit_register:dLRS"
+Info (12128): Elaborating entity "g04_Enigma_machine" for hierarchy "g04_Enigma_machine:enigmamachine"
+Warning (10540): VHDL Signal Declaration warning at g04_Enigma_machine.vhd(85): used explicit default value for signal "Notch_R" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at g04_Enigma_machine.vhd(86): used explicit default value for signal "Notch_M" because signal was never assigned a value
+Info (12128): Elaborating entity "g04_rotor_stepper_fsm" for hierarchy "g04_Enigma_machine:enigmamachine|g04_rotor_stepper_fsm:fsm"
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(34): signal "Keypress" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(41): signal "Keypress" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(48): signal "Knock_M" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(48): signal "KNock_R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(50): signal "Knock_M" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(50): signal "KNock_R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(52): signal "Knock_M" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g04_rotor_stepper_fsm.vhd(52): signal "KNock_R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "g04_5bit_comparator" for hierarchy "g04_Enigma_machine:enigmamachine|g04_5bit_comparator:comparatorR"
+Info (12128): Elaborating entity "g04_stecker" for hierarchy "g04_Enigma_machine:enigmamachine|g04_stecker:stecker"
+Info (12128): Elaborating entity "g04_Rotor" for hierarchy "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR"
+Info (12128): Elaborating entity "g04_0_25_counter_load" for hierarchy "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_0_25_counter_load:counter"
+Info (12128): Elaborating entity "g04_Enigma" for hierarchy "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_Enigma:decoder0"
+Info (12128): Elaborating entity "g04_lr_barrel_shifter" for hierarchy "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_lr_barrel_shifter:barrelshifter0"
+Info (12128): Elaborating entity "g04_26_5_encoder" for hierarchy "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_26_5_encoder:encoder0"
+Warning (10631): VHDL Process Statement warning at g04_26_5_encoder.vhd(23): inferring latch(es) for signal or variable "INDEX", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "INDEX[0]" at g04_26_5_encoder.vhd(23)
+Info (10041): Inferred latch for "INDEX[1]" at g04_26_5_encoder.vhd(23)
+Info (10041): Inferred latch for "INDEX[2]" at g04_26_5_encoder.vhd(23)
+Info (10041): Inferred latch for "INDEX[3]" at g04_26_5_encoder.vhd(23)
+Info (10041): Inferred latch for "INDEX[4]" at g04_26_5_encoder.vhd(23)
+Info (12128): Elaborating entity "g04_permutation" for hierarchy "g04_Enigma_machine:enigmamachine|g04_Rotor:rotorR|g04_permutation:permutator"
+Info (12128): Elaborating entity "g04_reflector" for hierarchy "g04_Enigma_machine:enigmamachine|g04_reflector:reflector"
+Info (12128): Elaborating entity "g04_7_segment_decoder" for hierarchy "g04_Enigma_machine:enigmamachine|g04_7_segment_decoder:display"
+Info: Quartus II 64-Bit Analysis & Elaboration was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Wed Jan 04 14:06:36 2017
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:03
+
+
